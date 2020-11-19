@@ -1,6 +1,6 @@
 console.log("Sixes explode!")
 
-const {prefix,token} = require('./config.json');
+// const {prefix,token} = require('./config.json');
 const Discord = require('discord.js-commando')
 const path = require('path');
 
@@ -8,7 +8,7 @@ const path = require('path');
 // const client = new Discord.Client();
 const client = new Discord.CommandoClient({
     owner: '95561665176670208',
-    commandPrefix: prefix
+    commandPrefix: process.env.COMMAND_PREFIX
 })
 client.registry.
 registerGroups(
@@ -22,4 +22,4 @@ client.once('ready', () => {
     
 });
 
-client.login(token);
+client.login(process.env.DJS_TOKEN);
