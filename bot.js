@@ -4,6 +4,10 @@ console.log("Sixes explode!")
 const Discord = require('discord.js-commando')
 const path = require('path');
 
+global.canExplode = true;
+global.explosionIndex = 1;
+global.explosionVal = 6;
+
 // const Discord = require('discord.js');
 // const client = new Discord.Client();
 const client = new Discord.CommandoClient({

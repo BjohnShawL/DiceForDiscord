@@ -18,6 +18,8 @@ module.exports = class Roll extends Commando.Command {
 
     run = async (message, args) => {
 
+        console.log(explosionIndex);
+
         function createUrl(argumentArray) {
             if (argumentArray.length === 1) {
                 return 'http://roll.diceapi.com/json/' + argumentArray[0].toString()
