@@ -77,27 +77,27 @@ module.exports = class Roll extends Commando.Command {
                         
                         let batchExploder = 0;
                         let rStart = explosionIteration < explosionCap;
-                        console.log(rStart)
-                        if(i===explosionIndex && rStart)
-                        {
-                            for (let i = 0; i < batchValues.length; i++) {
-                                const strVal = batchValues[i];
-                                let val = strVal.parseInt();
-                                if(val === explosionVal){batchExploder++}
-                                console.log(`Batch explosions : ${batchExploder}`);
-
-                            }
-                            if(batchExploder>0)
-                            {   
-                                let a = args.toString().split(" ")[explosionIndex];
-                                a.shift();
-                                newArg = batchExploder+a;
-
-                                this.run(message,newArg)
-
-                            }
-                        }
-                        else{explosionIteration = 0}
+                        console.log(rStart.toString())
+                            if(i===explosionIndex && rStart)
+                                {
+                                    for (let i = 0; i < batchValues.length; i++) {
+                                        const strVal = batchValues[i];
+                                        let val = strVal.parseInt();
+                                        if(val === explosionVal){batchExploder++}
+                                        console.log(`Batch explosions : ${batchExploder}`);
+                                    
+                                    }
+                                    if(batchExploder>0)
+                                    {   
+                                        let a = args.toString().split(" ")[explosionIndex];
+                                        a.shift();
+                                        newArg = batchExploder+a;
+                                    
+                                        this.run(message,newArg)
+                                    
+                                    }
+                                }
+                            else{explosionIteration = 0}
                         
                         const element = { name: `roll # ${i + 1}`, value: resArray.splice(0, batches[i]).join(', ') };
 
