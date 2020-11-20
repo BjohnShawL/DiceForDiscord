@@ -76,7 +76,9 @@ module.exports = class Roll extends Commando.Command {
                         const batchValues = newResArray.splice(0,batches[i]);
                         
                         let batchExploder = 0;
-                        if(i===explosionIndex && (explosionIteration < explosionCap))
+                        let rStart = explosionIteration < explosionCap;
+                        console.log(rStart)
+                        if(i===explosionIndex && rStart)
                         {
                             for (let i = 0; i < batchValues.length; i++) {
                                 const strVal = batchValues[i];
