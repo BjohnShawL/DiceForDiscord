@@ -4,7 +4,7 @@ console.log("Sixes explode!")
 const Discord = require('discord.js-commando')
 const path = require('path');
 
-global.canExplode = true;
+global.canExplode = process.env.CAN_EXPLODE;
 global.explosionIndex = 0;
 global.explosionVal = 6;
 global.explosionCap = 1;
