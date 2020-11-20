@@ -90,8 +90,8 @@ module.exports = class Roll extends Commando.Command {
                                     if(batchExploder>0)
                                     {   
                                         let a = args.toString().split(" ")[explosionIndex];
-                                        let a = a.substring(1)
-                                        newArg = batchExploder+a;
+                                        let denom = a.substring(1)
+                                        newArg = batchExploder+denom;
                                     
                                         this.run(message,newArg)
                                     
