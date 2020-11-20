@@ -9,8 +9,10 @@ module.exports = class Roll extends Commando.Command {
             group: 'player_commands',
             memberName: 'roll',
             description: 'Rolls <x> d<x> and returns the value in an embedded message',
-            argumentType: 'mmultiple'
+            argumentType: 'multiple'
         })
+
+        let explosionIteration = 0;
 
     }
 
