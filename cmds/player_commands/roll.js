@@ -82,7 +82,7 @@ module.exports = class Roll extends Commando.Command {
                                 {explosionIteration ++;
                                     for (let i = 0; i < batchValues.length; i++) {
                                         const strVal = batchValues[i];
-                                        let val = strVal.parseInt();
+                                        let val = parseInt(strVal);
                                         if(val === explosionVal){batchExploder++}
                                         console.log(`Batch explosions : ${batchExploder}`);
                                     
