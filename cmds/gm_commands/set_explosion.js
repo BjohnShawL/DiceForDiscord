@@ -1,13 +1,13 @@
 const Commando = require('discord.js-commando');
 const axios = require('axios');
 
-module.exports = class SetXplode extends Commando.Command {
+module.exports = class SetExplode extends Commando.Command {
     constructor(client)
     {
         super(client,{
-            name:'setXplode',
+            name:'setexplode',
             group: 'gm_commands',
-            memberName: 'setXplode',
+            memberName: 'setexplode',
             description: 'Toggles dice explosion off or on'
             
         })
@@ -26,7 +26,7 @@ module.exports = class SetXplode extends Commando.Command {
             {
                 canExplode = !canExplode;
             }
-            else{message.author.send(`I'm afraid you need to be a GM to use the '!setXplode' command`)}
+            else{message.author.send(`I'm afraid you need to be a GM to use the '!setexplode' command`)}
         }
         else{
             message.author.send(`You need to send this command from the in-game channel`);
