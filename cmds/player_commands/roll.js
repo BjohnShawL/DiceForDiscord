@@ -76,12 +76,13 @@ module.exports = class Roll extends Commando.Command {
                         const batchValues = newResArray.splice(0,batches[i]);
                         
                         let batchExploder = 0;
-                        if(i===explosionIndex && explosionIteration < explosionCap)
+                        if(i===explosionIndex && (explosionIteration < explosionCap))
                         {
                             for (let i = 0; i < batchValues.length; i++) {
                                 const strVal = batchValues[i];
                                 let val = strVal.parseInt();
                                 if(val === explosionVal){batchExploder++}
+                                console.log(`Batch explosions : ${batchExploder}`);
 
                             }
                             if(batchExploder>0)
