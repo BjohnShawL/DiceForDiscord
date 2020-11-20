@@ -8,6 +8,7 @@ global.canExplode = true;
 global.explosionIndex = 1;
 global.explosionVal = 6;
 global.explosionCap = 1;
+global.explosionIteration = 0;
 
 // const Discord = require('discord.js');
 // const client = new Discord.Client();

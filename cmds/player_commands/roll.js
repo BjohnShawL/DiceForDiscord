@@ -12,7 +12,7 @@ module.exports = class Roll extends Commando.Command {
             argumentType: 'multiple'
         })
 
-        explosionIteration = 0;
+        
 
     }
 
@@ -51,7 +51,7 @@ module.exports = class Roll extends Commando.Command {
             axios.get(diceUrl)
                 .then((res) => {
                     const result = res.data;
-                    Roll.explosionIteration ++;
+                    explosionIteration ++;
                     let r = "";
                     for (let i = 0; i < result.dice.length; i++) {
                         r += result.dice[i].value.toString();
@@ -91,7 +91,8 @@ module.exports = class Roll extends Commando.Command {
                                 this.run(message,newArg)
 
                             }
-                        } 
+                        }
+                        else{explosionIteration = 0} 
                         const element = { name: `roll # ${i + 1}`, value: resArray.splice(0, batches[i]).join(', ') };
 
                         embed.addField(element.name, element.value);
