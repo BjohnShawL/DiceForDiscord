@@ -60,6 +60,7 @@ module.exports = class Roll extends Commando.Command {
                     ;
                     let resultArray = r.split(", ");
                     const resArray = resultArray.splice(0, resultArray.length - 1);
+                    console.log(resArray); 
                     const batches = [];
                     for (let i = 0; i < args.toString().split(" ").length; i++) {
                         var numOfDice = args.toString().split(" ")[i];
