@@ -7,6 +7,7 @@ const path = require('path');
 global.canExplode = true;
 global.explosionIndex = 1;
 global.explosionVal = 6;
+global.explosionCap = 1;
 
 // const Discord = require('discord.js');
 // const client = new Discord.Client();

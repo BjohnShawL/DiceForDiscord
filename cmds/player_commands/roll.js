@@ -51,7 +51,7 @@ module.exports = class Roll extends Commando.Command {
             axios.get(diceUrl)
                 .then((res) => {
                     const result = res.data;
-                    
+                    explosionIteration ++;
                     let r = "";
                     for (let i = 0; i < result.dice.length; i++) {
                         r += result.dice[i].value.toString();
@@ -72,6 +72,26 @@ module.exports = class Roll extends Commando.Command {
                     const embed = new MessageEmbed().setAuthor(`--${e_name} has rolled the dice--`).setTitle('Results :').setColor('#4E6F7B');
 
                     for (let i = 0; i < batches.length; i++) {
+                        const batchValues = resArray.splice(0,batches[i]);
+                        let batchExploder = 0;
+                        if(i===explosionIndex && explosionIteration < explosionCap)
+                        {
+                            for (let i = 0; i < batchValues.length; i++) {
+                                const strVal = batchValues[i];
+                                let val = strVal.parseInt();
+                                if(val === explosionVal){batchExploder++}
+
+                            }
+                            if(batchExploder>0)
+                            {   
+                                let a = args.toString().split(" ")[explosionIndex];
+                                a.shift();
+                                newArg = batchExploder+a;
+
+                                this.run(message,newArg)
+
+                            }
+                        } 
                         const element = { name: `roll # ${i + 1}`, value: resArray.splice(0, batches[i]).join(', ') };
 
                         embed.addField(element.name, element.value);
