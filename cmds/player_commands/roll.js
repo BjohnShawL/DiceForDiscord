@@ -20,7 +20,7 @@ module.exports = class Roll extends Commando.Command {
 
     run = async (message, args) => {
 
-        console.log(explosionIndex);
+        console.log(explosionIteration);
 
         function createUrl(argumentArray) {
             if (argumentArray.length === 1) {
@@ -56,11 +56,10 @@ module.exports = class Roll extends Commando.Command {
                     for (let i = 0; i < result.dice.length; i++) {
                         r += result.dice[i].value.toString();
                         r += ', ';
-                    }
-                    ;
+                    };
                     let resultArray = r.split(", ");
                     const resArray = resultArray.splice(0, resultArray.length - 1);
-                    console.log(resArray); 
+ 
                     const batches = [];
                     for (let i = 0; i < args.toString().split(" ").length; i++) {
                         var numOfDice = args.toString().split(" ")[i];
@@ -75,7 +74,7 @@ module.exports = class Roll extends Commando.Command {
                     for (let i = 0; i < batches.length; i++) {
                         let newResArray = [...resArray];
                         const batchValues = newResArray.splice(0,batches[i]);
-                        console.log(resArray);
+                        
                         let batchExploder = 0;
                         if(i===explosionIndex && explosionIteration < explosionCap)
                         {
@@ -96,7 +95,7 @@ module.exports = class Roll extends Commando.Command {
                             }
                         }
                         else{explosionIteration = 0}
-                        console.log(resArray); 
+                        
                         const element = { name: `roll # ${i + 1}`, value: resArray.splice(0, batches[i]).join(', ') };
 
                         embed.addField(element.name, element.value);
