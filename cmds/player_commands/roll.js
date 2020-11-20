@@ -72,7 +72,8 @@ module.exports = class Roll extends Commando.Command {
                     const embed = new MessageEmbed().setAuthor(`--${e_name} has rolled the dice--`).setTitle('Results :').setColor('#4E6F7B');
 
                     for (let i = 0; i < batches.length; i++) {
-                        const batchValues = resArray.splice(0,batches[i]);
+                        let newResArray = resArray;
+                        const batchValues = newResArray.splice(0,batches[i]);
                         let batchExploder = 0;
                         if(i===explosionIndex && explosionIteration < explosionCap)
                         {
