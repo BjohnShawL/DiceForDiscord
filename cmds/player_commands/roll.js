@@ -51,7 +51,7 @@ module.exports = class Roll extends Commando.Command {
             axios.get(diceUrl)
                 .then((res) => {
                     const result = res.data;
-                    explosionIteration ++;
+                    
                     let r = "";
                     for (let i = 0; i < result.dice.length; i++) {
                         r += result.dice[i].value.toString();
@@ -79,7 +79,7 @@ module.exports = class Roll extends Commando.Command {
                         let rStart = explosionIteration < explosionCap;
                         console.log(rStart.toString())
                             if(i===explosionIndex && rStart)
-                                {
+                                {explosionIteration ++;
                                     for (let i = 0; i < batchValues.length; i++) {
                                         const strVal = batchValues[i];
                                         let val = strVal.parseInt();
