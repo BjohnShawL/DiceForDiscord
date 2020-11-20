@@ -93,7 +93,8 @@ module.exports = class Roll extends Commando.Command {
 
                             }
                         }
-                        else{explosionIteration = 0} 
+                        else{explosionIteration = 0}
+                        console.log(resArray); 
                         const element = { name: `roll # ${i + 1}`, value: resArray.splice(0, batches[i]).join(', ') };
 
                         embed.addField(element.name, element.value);
