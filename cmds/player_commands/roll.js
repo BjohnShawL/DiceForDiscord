@@ -90,7 +90,7 @@ module.exports = class Roll extends Commando.Command {
                                     if(batchExploder>0)
                                     {   
                                         let a = args.toString().split(" ")[explosionIndex];
-                                        a.shift();
+                                        let a = a.substring(1)
                                         newArg = batchExploder+a;
                                     
                                         this.run(message,newArg)
